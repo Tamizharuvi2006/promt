@@ -80,7 +80,7 @@ const Home = () => {
                     </div>
 
                     <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
-                        {['FEATURES', 'STATS', 'PRICING', 'DOCS'].map((item) => (
+                        {['FEATURES', 'STATS', 'PRICING', 'ABOUT'].map((item) => (
                             <a key={item} href={`#${item.toLowerCase()}`} className="px-4 py-2 text-xs font-mono text-gray-400 hover:text-white hover:bg-white/5 rounded transition-all">
                                 {item}
                             </a>
@@ -133,6 +133,47 @@ const Home = () => {
 
                 {/* Features */}
                 <Features />
+
+                {/* SEO Content Block */}
+                <section id="about" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-gray-200">
+                    <div className="max-w-5xl mx-auto space-y-6">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">About PromptVibely</h2>
+                        <p className="text-base leading-relaxed text-gray-300">
+                            PromptVibely is the platform for building apps easier by prompt. We combine a prompt web app, prompt chat, and dashboard workflows so you can design, test, and ship production-grade prompts without wrestling with scattered tools. Every flow in the product is built to keep your prompt engineering loop tight: describe what you want, see a blueprint, iterate with AI, and deploy to your stack.
+                        </p>
+                        <p className="text-base leading-relaxed text-gray-300">
+                            Our dashboard gives you organized projects, credit tracking, and a prompt library. The prompt chat keeps conversation and context together so you can refine instructions before they hit production. We focus on clarity in the prompt itself—role, context, constraints, and evaluation—so your apps stay deterministic across GPT-4, Claude, and any model you run.
+                        </p>
+                        <p className="text-base leading-relaxed text-gray-300">
+                            If you are evaluating prompt builders, compare us against generic editors: PromptVibely bakes in guardrails like token efficiency, response formatting, and reusable blueprints. That means fewer regressions, faster onboarding for teammates, and cleaner handoffs to engineering. The goal is simple: make prompt ops boring, predictable, and fast so your team ships features—not just drafts.
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                                <h3 className="text-lg font-semibold text-white mb-2">Quick links</h3>
+                                <ul className="space-y-2 list-disc list-inside">
+                                    <li><a href="#features" className="text-violet-300 hover:text-violet-200">Explore features</a></li>
+                                    <li><a href="#stats" className="text-violet-300 hover:text-violet-200">View platform stats</a></li>
+                                    <li><a href="#pricing" className="text-violet-300 hover:text-violet-200">Check pricing</a></li>
+                                    <li><a href="#about" className="text-violet-300 hover:text-violet-200">Why PromptVibely</a></li>
+                                    <li><a href="/dashboard" className="text-violet-300 hover:text-violet-200">Open dashboard</a></li>
+                                </ul>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                                <h3 className="text-lg font-semibold text-white mb-2">What you get</h3>
+                                <ul className="space-y-2 list-disc list-inside">
+                                    <li>Blueprint-first prompt planning</li>
+                                    <li>Prompt chat with saved history per project</li>
+                                    <li>Credits visibility and upgrade paths</li>
+                                    <li>Model-agnostic prompt generation</li>
+                                    <li>Secure storage for private prompts</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p className="text-base leading-relaxed text-gray-300">
+                            Looking for a prompt web app that stays aligned with your roadmap? PromptVibely centers the words in your H1—building apps easier by prompt—inside every feature. Bring your own stack, connect to your preferred LLM, and keep iterating with a workflow that is designed for real shipping teams.
+                        </p>
+                    </div>
+                </section>
             </main>
 
             {/* Bottom gradient line */}

@@ -17,11 +17,11 @@ const Features = () => {
                         <span className="inline-block w-2 h-2 bg-violet-500 rounded-full mr-2 animate-pulse"></span>
                         Full Stack Generation
                     </h2>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
                         From Prompt to
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">Deployed App <br /> In Seconds</span>
-                    </h1>
+                    </h2>
                 </div>
 
                 {/* Bento Grid Layout */}

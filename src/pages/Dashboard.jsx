@@ -140,6 +140,7 @@ const Dashboard = () => {
                 title="PromptVibely Dashboard"
                 description="Manage prompt projects, credits, and AI prompt engineering in the PromptVibely dashboard."
                 keywords="promptvibely dashboard, prompt builder console, prompt projects"
+                canonical="https://webprompt.app/dashboard"
             />
             <Sidebar activePage="dashboard" projects={projects} />
 

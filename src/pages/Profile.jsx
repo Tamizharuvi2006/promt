@@ -54,6 +54,7 @@ const Profile = () => {
                 title="PromptVibely Profile"
                 description="View and manage your PromptVibely profile, credits, and subscription."
                 keywords="promptvibely profile, prompt account, prompt builder profile"
+                canonical="https://webprompt.app/profile"
             />
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 pointer-events-none">

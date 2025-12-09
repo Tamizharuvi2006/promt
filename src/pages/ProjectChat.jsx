@@ -198,6 +198,7 @@ const ProjectChat = () => {
                 title={project?.name ? `${project.name} | PromptVibely Prompt Chat` : 'PromptVibely Prompt Chat'}
                 description={project?.name ? `Chat, iterate, and ship prompts for ${project.name} in PromptVibely.` : 'Chat, iterate, and ship prompts in PromptVibely.'}
                 keywords="promptvibely prompt chat, prompt builder, project chat, ai prompt iteration"
+                canonical={project?.id ? `https://webprompt.app/project/${project.id}` : 'https://webprompt.app/project'}
             />
 
             {/* Sidebar */}
