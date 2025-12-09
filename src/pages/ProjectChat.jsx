@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import Sidebar from '../components/Sidebar';
-import { RiCpuLine, RiSendPlane2Fill, RiCodeBoxLine } from 'react-icons/ri';
+import { RiCpuLine, RiSendPlane2Fill, RiCodeBoxLine, RiRobot2Line, RiUser3Line } from 'react-icons/ri';
 import UserDropdown from '../components/UserDropdown';
 import { sendMessageToOpenRouter } from '../services/aiService';
 import Seo from '../components/Seo';
@@ -230,52 +230,53 @@ const ProjectChat = () => {
                 </header>
 
                 {/* Chat Area */}
-                <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6 scroll-smooth bg-[#0f0f0f]">
+                <div className="flex-1 overflow-y-auto px-3 py-4 sm:p-6 space-y-4 scroll-smooth bg-[#0f0f0f]">
                     {messages.map((msg, index) => (
-                        <div key={msg.id || index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2 duration-300`}>
+                        <div key={msg.id || index} className={`flex gap-2 sm:gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} animate-in fade-in duration-200 group`}>
+                            
+                            {/* Avatar */}
+                            <div className={`flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${msg.role === 'user' ? 'bg-violet-600 text-white' : (msg.role === 'system' ? 'bg-blue-500/20 text-blue-400' : 'bg-emerald-500/20 text-emerald-400')}`}>
+                                {msg.role === 'user' ? <RiUser3Line /> : (msg.role === 'system' ? <RiCodeBoxLine /> : <RiRobot2Line />)}
+                            </div>
 
-                            <div className={`relative w-full max-w-full sm:max-w-[92%] md:max-w-[85%] rounded-2xl p-3 sm:p-4 md:p-5 shadow-lg group overflow-hidden ${msg.role === 'user'
-                                ? 'bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-tr-none border border-white/10'
+                            {/* Bubble */}
+                            <div className={`relative min-w-0 max-w-[calc(100%-3rem)] sm:max-w-[80%] rounded-2xl p-3 sm:p-4 shadow-md ${msg.role === 'user'
+                                ? 'bg-violet-600 text-white rounded-tr-sm'
                                 : (msg.role === 'system'
                                     ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200'
-                                    : 'bg-[#181818] border border-white/5 text-gray-200 rounded-tl-none hover:border-violet-500/20 transition-colors')
+                                    : 'bg-[#1a1a1a] border border-white/5 text-gray-200 rounded-tl-sm')
                                 }`}>
 
                                 {msg.role === 'system' && (
-                                    <div className="flex items-center gap-2 mb-3 pb-2 border-b border-blue-500/10">
-                                        <RiCodeBoxLine className="text-blue-400" />
-                                        <span className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">System Context</span>
+                                    <div className="flex items-center gap-2 mb-2 pb-2 border-b border-blue-500/10">
+                                        <RiCodeBoxLine className="text-blue-400 text-xs" />
+                                        <span className="text-[9px] font-bold text-blue-400 uppercase">Context</span>
                                     </div>
                                 )}
 
-                                <div className="font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words overflow-x-auto">
+                                <div className="text-[11px] sm:text-xs leading-relaxed whitespace-pre-wrap break-words overflow-wrap-anywhere">
                                     {msg.content}
                                 </div>
 
-                                {/* Copy Button for Assistant Messages */}
+                                {/* Copy for assistant */}
                                 {msg.role === 'assistant' && (
                                     <button
                                         onClick={() => copyToClipboard(msg.content)}
-                                        className="absolute top-2 right-2 p-1.5 rounded-md text-gray-500 hover:text-white hover:bg-white/10 transition-all opacity-0 group-hover:opacity-100"
-                                        title="Copy to clipboard"
+                                        className="mt-2 pt-2 border-t border-white/5 w-full text-left text-[9px] text-gray-500 hover:text-white transition-colors uppercase tracking-wide"
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        Copy response
                                     </button>
-                                )}
-                                {msg.role === 'assistant' && (
-                                    <div className="absolute -bottom-5 left-0 text-[10px] text-gray-600 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span>AI Assistant</span>
-                                    </div>
                                 )}
                             </div>
                         </div>
                     ))}
                     {sending && (
-                        <div className="flex justify-start">
-                            <div className="bg-white/5 border border-white/5 text-gray-400 rounded-2xl rounded-tl-none p-4 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"></span>
-                                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                        <div className="flex gap-2 sm:gap-3">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs"><RiRobot2Line /></div>
+                            <div className="bg-[#1a1a1a] border border-white/5 rounded-2xl rounded-tl-sm p-3 flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce"></span>
+                                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:0.15s]"></span>
+                                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:0.3s]"></span>
                             </div>
                         </div>
                     )}
@@ -283,27 +284,25 @@ const ProjectChat = () => {
                 </div>
 
                 {/* Input Area */}
-                <div className="p-3 sm:p-4 bg-[#0a0a0a] border-t border-white/5">
-                    <form onSubmit={handleSendMessage} className="relative max-w-4xl mx-auto">
+                <div className="p-3 sm:p-4 bg-[#0a0a0a]/95 backdrop-blur-sm border-t border-white/5 safe-area-bottom">
+                    <form onSubmit={handleSendMessage} className="relative max-w-3xl mx-auto flex gap-2">
                         <input
                             type="text"
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
-                            placeholder={sending ? "AI is thinking..." : "Type your instruction..."}
+                            placeholder={sending ? "Generating..." : "Ask AI..."}
                             disabled={sending}
-                            className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl pl-4 pr-12 py-3 sm:py-3.5 text-sm text-white focus:border-violet-500/50 focus:outline-none placeholder-gray-600 transition-all shadow-lg font-mono disabled:opacity-50"
+                            className="flex-1 min-w-0 bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-violet-500/50 focus:outline-none placeholder-gray-500 transition-all disabled:opacity-50"
                         />
                         <button
                             type="submit"
                             disabled={!inputMessage.trim() || sending}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-violet-600 rounded-lg text-white hover:bg-violet-500 disabled:opacity-50 disabled:hover:bg-violet-600 transition-colors"
+                            className="flex-shrink-0 w-11 h-11 bg-violet-600 rounded-xl text-white flex items-center justify-center hover:bg-violet-500 disabled:opacity-50 transition-colors"
                         >
-                            <RiSendPlane2Fill className="w-4 h-4" />
+                            <RiSendPlane2Fill className="w-5 h-5" />
                         </button>
                     </form>
-                    <div className="text-center mt-2">
-                        <span className="text-[10px] text-gray-600">AI can make mistakes. Review generated code.</span>
-                    </div>
+                    <p className="text-center mt-2 text-[9px] text-gray-600">AI may make mistakes</p>
                 </div>
 
             </main>
