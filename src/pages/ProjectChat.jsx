@@ -228,10 +228,10 @@ const ProjectChat = () => {
                     {messages.map((msg, index) => (
                         <div key={msg.id || index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2 duration-300`}>
 
-                            <div className={`relative max-w-[85%] rounded-2xl p-5 shadow-lg ${msg.role === 'user'
+                            <div className={`relative max-w-[85%] rounded-2xl p-5 shadow-lg group ${msg.role === 'user'
                                 ? 'bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-tr-none border border-white/10'
                                 : (msg.role === 'system'
-                                    ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200 w-full'
+                                    ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200 w/full'
                                     : 'bg-[#181818] border border-white/5 text-gray-200 rounded-tl-none hover:border-violet-500/20 transition-colors')
                                 }`}>
 
