@@ -7,6 +7,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const ProjectChat = lazy(() => import('./pages/ProjectChat'));
 const Profile = lazy(() => import('./pages/Profile'));
+const ErrorPage = lazy(() => import('./pages/Error'));
 
 // Loading Fallback
 const LoadingSpinner = () => (
@@ -25,8 +26,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/project/:id" element={<ProjectChat />} />
             <Route path="/profile" element={<Profile />} />
-            {/* Fallback route */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>
       </Router>

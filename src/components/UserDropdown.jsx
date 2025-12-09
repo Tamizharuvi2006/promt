@@ -25,7 +25,8 @@ const UserDropdown = ({ session, profile }) => {
     };
 
     // Get display name and avatar (fallback to email initial)
-    const displayName = profile?.full_name || session?.user?.email?.split('@')[0] || 'User';
+    const email = session?.user?.email || '';
+    const displayName = profile?.full_name || email.split('@')[0] || 'User';
     const avatarUrl = profile?.avatar_url;
     const initial = displayName.charAt(0).toUpperCase();
 
@@ -67,7 +68,7 @@ const UserDropdown = ({ session, profile }) => {
                 <div className="absolute right-0 top-full mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-xl shadow-2xl py-2 z-50 transform origin-top-right transition-all">
                     <div className="px-4 py-3 border-b border-white/5">
                         <p className="text-xs text-gray-500 font-mono uppercase tracking-wider mb-1">Signed in as</p>
-                        <p className="text-sm text-white font-medium truncate">{session?.user?.email}</p>
+                        <p className="text-sm text-white font-medium truncate">{email}</p>
                         <div className="mt-2 flex items-center gap-2">
                             <div className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase border ${profile?.tier === 'PRO' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20' :
                                 profile?.tier === 'PLUS' ? 'bg-violet-500/10 text-violet-400 border-violet-500/20' :

@@ -90,17 +90,23 @@ const ProjectChat = () => {
             return;
         }
 
-        // Initialize with Blueprint if empty
+        // Initialize with Blueprint and a clarifying question if empty
         if ((!history || history.length === 0) && projectDescription) {
-            const initialMessage = {
+            const initialSystem = {
                 project_id: projectId,
                 role: 'system',
                 content: `PROJECT BLUEPRINT CONTEXT:\n\n${projectDescription}\n\n[SYSTEM: Initialize context based on this blueprint.]`
             };
 
-            await supabase.from('project_chat_history').insert([initialMessage]);
+            const initialAssistant = {
+                project_id: projectId,
+                role: 'assistant',
+                content: 'Before I craft the full prompt, what is the most critical outcome and how many pages do you want (home, listing, detail, cart/checkout, about/contact, auth, error)? Any must-have components or data sources to include? Say "send prompt" when ready.'
+            };
 
-            setMessages([initialMessage]);
+            await supabase.from('project_chat_history').insert([initialSystem, initialAssistant]);
+
+            setMessages([initialSystem, initialAssistant]);
         } else {
             setMessages(history || []);
         }
@@ -228,10 +234,10 @@ const ProjectChat = () => {
                     {messages.map((msg, index) => (
                         <div key={msg.id || index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2 duration-300`}>
 
-                            <div className={`relative max-w-[85%] rounded-2xl p-5 shadow-lg group ${msg.role === 'user'
+                            <div className={`relative w-full max-w-[95%] md:max-w-[85%] rounded-2xl p-4 md:p-5 shadow-lg group overflow-hidden ${msg.role === 'user'
                                 ? 'bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-tr-none border border-white/10'
                                 : (msg.role === 'system'
-                                    ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200 w/full'
+                                    ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200'
                                     : 'bg-[#181818] border border-white/5 text-gray-200 rounded-tl-none hover:border-violet-500/20 transition-colors')
                                 }`}>
 
@@ -242,7 +248,7 @@ const ProjectChat = () => {
                                     </div>
                                 )}
 
-                                <div className="font-mono text-xs md:text-sm leading-relaxed whitespace-pre-wrap">
+                                <div className="font-mono text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words overflow-x-auto">
                                     {msg.content}
                                 </div>
 

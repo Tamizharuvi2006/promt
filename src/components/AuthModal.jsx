@@ -14,6 +14,8 @@ const AuthModal = ({ isOpen, onClose }) => {
     const [error, setError] = useState(null);
     const [message, setMessage] = useState('');
 
+    const normalize = (val) => (val || '').trim();
+
     if (!isOpen) return null;
 
     const handleGoogleLogin = async () => {
@@ -40,19 +42,21 @@ const AuthModal = ({ isOpen, onClose }) => {
         setLoading(true);
 
         try {
+            const emailClean = normalize(email).toLowerCase();
+            const passwordClean = normalize(password);
             if (isLogin) {
                 // Login Flow
                 const { error } = await supabase.auth.signInWithPassword({
-                    email,
-                    password,
+                    email: emailClean,
+                    password: passwordClean,
                 });
                 if (error) throw error;
                 onClose();
             } else {
                 // Sign Up Flow
                 const { error } = await supabase.auth.signUp({
-                    email,
-                    password,
+                    email: emailClean,
+                    password: passwordClean,
                     options: {
                         data: {
                             full_name: fullName,
@@ -63,7 +67,9 @@ const AuthModal = ({ isOpen, onClose }) => {
                 setMessage('Registration successful! Check your email for verification.');
             }
         } catch (error) {
-            setError(error.message);
+            const msg = error?.message || 'Authentication failed';
+            const hint = msg.toLowerCase().includes('mail address') ? ' Supabase is rejecting the email format. Check Auth > Email settings (sender address) or disable confirmations for testing.' : '';
+            setError(msg + hint);
         } finally {
             setLoading(false);
         }

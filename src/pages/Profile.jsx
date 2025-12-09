@@ -90,7 +90,7 @@ const Profile = () => {
 
                         <div className="flex-1 space-y-6 w-full">
                             <div>
-                                <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white flex items-center gap-3">
+                                <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white flex items-center gap-3 flex-wrap">
                                     {profile?.full_name || 'User'}
                                     {profile?.tier === 'PRO' && (
                                         <span className="px-3 py-1 bg-gradient-to-r from-amber-400 to-orange-500 text-black text-xs font-bold rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]">
