@@ -38,6 +38,8 @@ YOUR PROCESS (STRICTLY FOLLOW THIS):
 - You must output ONLY valid ${format} code.
 - DO NOT Include any conversational text, explanations, or markdown code blocks (e.g. no \`\`\`json wrappers).
 - JUST THE RAW ${format} STRING.
+- Keep the entire response within 600-700 characters (soft cap); be concise.
+- If the request says "AI choice" for palette or similar, choose and include a coherent palette.
 - If you are asking clarifying questions (Phase 2), you may speak normally.
 - If you are delivering the final result (Phase 3), SILENCE ALL CHATTER and output only ${format}.
 
