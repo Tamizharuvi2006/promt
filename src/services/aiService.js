@@ -77,8 +77,15 @@ TONE:
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error?.message || `API Error: ${response.status}`);
+            let detail = '';
+            try {
+                const errorData = await response.json();
+                detail = errorData?.error?.message || JSON.stringify(errorData);
+            } catch (e) {
+                detail = await response.text();
+            }
+            const message = `API Error ${response.status}: ${detail || 'Unknown error from OpenRouter'}`;
+            throw new Error(message);
         }
 
         const data = await response.json();
