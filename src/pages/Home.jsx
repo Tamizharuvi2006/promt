@@ -91,7 +91,7 @@ const Home = () => {
                                 <UserDropdown session={session} profile={profile} />
                                 <button
                                     onClick={() => navigate('/dashboard')}
-                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto"
+                                    className="hidden sm:inline-flex px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded"
                                 >
                                     Launch Console
                                 </button>
@@ -100,15 +100,9 @@ const Home = () => {
                             <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
                                 <button
                                     onClick={() => setIsAuthModalOpen(true)}
-                                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors w-full sm:w-auto text-left"
+                                    className="px-5 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto text-center"
                                 >
                                     Login
-                                </button>
-                                <button
-                                    onClick={() => setIsAuthModalOpen(true)}
-                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto"
-                                >
-                                    Launch Console
                                 </button>
                             </div>
                         )}
