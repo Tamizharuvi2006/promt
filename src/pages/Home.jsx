@@ -62,7 +62,12 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] relative flex flex-col font-sans selection:bg-violet-500/30">
-            <Seo />
+            <Seo
+                title="PromptVibely Prompt Web App"
+                description="PromptVibely (WebPrompt) is the prompt web app to plan, build, and test AI prompts for production apps."
+                keywords="promptvibely, prompt web app, ai prompt builder, webprompt"
+                canonical="https://webprompt.app/"
+            />
 
             {/* Navigation - Tech Style */}
             <nav className="relative z-50 px-4 sm:px-6 py-3 border-b border-white/[0.06] backdrop-blur-sm bg-black/20 sticky top-0">
