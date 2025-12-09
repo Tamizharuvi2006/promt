@@ -17,7 +17,13 @@ const isValidUrl = (url) => {
 
 // Return a valid client or a mock to prevent crash if keys are missing/invalid
 export const supabase = (isValidUrl(supabaseUrl) && supabaseAnonKey && supabaseAnonKey !== 'YOUR_SUPABASE_ANON_KEY_HERE')
-    ? createClient(supabaseUrl, supabaseAnonKey)
+    ? createClient(supabaseUrl, supabaseAnonKey, {
+        auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true
+        }
+    })
     : {
         auth: {
             getSession: () => Promise.resolve({ data: { session: null } }),
