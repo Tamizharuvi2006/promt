@@ -20,6 +20,10 @@ const HeroContent = () => {
                         Easier by Prompt
                     </h1>
 
+                    <h2 className="text-xl md:text-2xl font-semibold text-gray-200">
+                        WebPrompt — AI prompt builder and prompt engineering studio to ship production-grade prompts fast.
+                    </h2>
+
                     <p className="text-lg text-gray-400 max-w-lg leading-relaxed border-l-2 border-white/10 pl-6">
                         We provide the best prompts to streamline your build process.
                         Simply describe your app, and let our engine handle the architecture.
