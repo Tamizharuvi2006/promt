@@ -21,6 +21,9 @@ const AuthModal = ({ isOpen, onClose }) => {
             setLoading(true);
             const { error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',
+                options: {
+                    redirectTo: 'https://promptweb.app'
+                }
             });
             if (error) throw error;
         } catch (error) {
