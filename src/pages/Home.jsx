@@ -65,11 +65,11 @@ const Home = () => {
             <Seo />
 
             {/* Navigation - Tech Style */}
-            <nav className="relative z-50 px-6 py-3 border-b border-white/[0.06] backdrop-blur-sm bg-black/20 sticky top-0">
-                <div className="max-w-7xl mx-auto flex flex-wrap items-center gap-3 md:gap-6 justify-between">
-                    <div className="flex items-center gap-3 min-w-0">
-                        <img src={logo} alt="Prompt AI Logo" className="h-16 w-auto" />
-                        <span className="text-xl font-bold tracking-tight text-white font-mono">
+            <nav className="relative z-50 px-4 sm:px-6 py-3 border-b border-white/[0.06] backdrop-blur-sm bg-black/20 sticky top-0">
+                <div className="max-w-7xl mx-auto flex items-center gap-2 sm:gap-4 md:gap-6 justify-between flex-nowrap">
+                    <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink">
+                        <img src={logo} alt="Prompt AI Logo" className="h-12 md:h-16 w-auto" />
+                        <span className="text-lg md:text-xl font-bold tracking-tight text-white font-mono whitespace-nowrap">
                             PROMPT_AI<span className="text-violet-500">.SYS</span>
                         </span>
                     </div>
@@ -82,25 +82,25 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto ml-auto">
+                    <div className="flex items-center gap-2 sm:gap-3 justify-end w-auto ml-auto flex-nowrap">
                         <span className="hidden md:inline-block font-mono text-xs text-emerald-500 whitespace-nowrap">
                             ● SYSTEM_ONLINE
                         </span>
                         {session ? (
-                            <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
+                            <div className="flex items-center gap-2 sm:gap-3 justify-end w-auto flex-nowrap">
                                 <UserDropdown session={session} profile={profile} />
                                 <button
                                     onClick={() => navigate('/dashboard')}
-                                    className="hidden sm:inline-flex px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded"
+                                    className="hidden sm:inline-flex px-5 py-2 text-sm font-medium bg-violet-600 text-white hover:bg-violet-500 transition-colors border border-violet-500/60 rounded shadow-sm"
                                 >
                                     Launch Console
                                 </button>
                             </div>
                         ) : (
-                            <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
+                            <div className="flex items-center gap-2 sm:gap-3 justify-end w-auto flex-nowrap">
                                 <button
                                     onClick={() => setIsAuthModalOpen(true)}
-                                    className="px-4 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-violet-50 transition-colors border border-transparent rounded w-auto"
+                                    className="px-3 sm:px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 transition-colors border border-violet-500/60 rounded w-auto shadow-sm"
                                 >
                                     Login
                                 </button>
