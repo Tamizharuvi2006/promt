@@ -136,7 +136,11 @@ const Dashboard = () => {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] font-sans selection:bg-violet-500/30 flex overflow-hidden">
-            <Seo title="Dashboard" description="Manage your AI projects and prompts." />
+            <Seo
+                title="PromptVibely Dashboard"
+                description="Manage prompt projects, credits, and AI prompt engineering in the PromptVibely dashboard."
+                keywords="promptvibely dashboard, prompt builder console, prompt projects"
+            />
             <Sidebar activePage="dashboard" projects={projects} />
 
             <main className="flex-1 flex flex-col h-screen overflow-hidden relative">

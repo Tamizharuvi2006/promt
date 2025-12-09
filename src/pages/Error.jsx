@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { RiHome4Line, RiDashboardLine, RiShieldKeyholeLine } from 'react-icons/ri';
 import { supabase } from '../supabaseClient';
+import Seo from '../components/Seo';
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -34,6 +35,11 @@ const ErrorPage = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center px-4">
+      <Seo
+        title="PromptVibely | Page Not Found"
+        description="PromptVibely prompt web app page not found. Return to dashboard or home."
+        keywords="promptvibely 404, prompt web app not found"
+      />
       <div className="max-w-lg w-full bg-[#0f0f0f] border border-white/10 rounded-2xl p-8 shadow-2xl text-center space-y-4">
         <div className="flex items-center justify-center gap-3 text-fuchsia-300 text-sm font-mono">
           <RiShieldKeyholeLine className="w-6 h-6" />

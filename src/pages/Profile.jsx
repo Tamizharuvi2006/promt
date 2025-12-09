@@ -50,7 +50,11 @@ const Profile = () => {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white p-6 relative overflow-hidden font-sans selection:bg-violet-500/30">
-            <Seo title="Your Profile" />
+            <Seo
+                title="PromptVibely Profile"
+                description="View and manage your PromptVibely profile, credits, and subscription."
+                keywords="promptvibely profile, prompt account, prompt builder profile"
+            />
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-600/5 rounded-full blur-[120px]"></div>

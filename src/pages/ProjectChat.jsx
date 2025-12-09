@@ -194,7 +194,11 @@ const ProjectChat = () => {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] font-sans selection:bg-violet-500/30 flex overflow-hidden">
-            <Seo title={project?.name} description={`AI Chat context for project: ${project?.name}`} />
+            <Seo
+                title={project?.name ? `${project.name} | PromptVibely Prompt Chat` : 'PromptVibely Prompt Chat'}
+                description={project?.name ? `Chat, iterate, and ship prompts for ${project.name} in PromptVibely.` : 'Chat, iterate, and ship prompts in PromptVibely.'}
+                keywords="promptvibely prompt chat, prompt builder, project chat, ai prompt iteration"
+            />
 
             {/* Sidebar */}
             <Sidebar activePage="dashboard" projects={sidebarProjects} />
