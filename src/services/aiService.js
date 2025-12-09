@@ -1,7 +1,6 @@
 import { supabase } from '../supabaseClient';
 
-const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
-const OPENROUTER_API_URL = import.meta.env.VITE_OPENROUTER_API_URL || 'https://openrouter.ai/api/v1/chat/completions';
+const OPENROUTER_API_URL = import.meta.env.VITE_OPENROUTER_API_URL || '/api/chat';
 const AI_MODEL = import.meta.env.VITE_AI_MODEL || 'google/gemini-2.0-flash-exp:free';
 
 /**
@@ -13,11 +12,6 @@ const AI_MODEL = import.meta.env.VITE_AI_MODEL || 'google/gemini-2.0-flash-exp:f
  * @returns {Promise<string>} - The AI's response text
  */
 export const sendMessageToOpenRouter = async (history, project) => {
-    if (!OPENROUTER_API_KEY) {
-        console.warn('VITE_OPENROUTER_API_KEY is missing. Falling back to simulation.');
-        return "Error: OpenRouter API Key is missing. Please add VITE_OPENROUTER_API_KEY to your .env file.";
-    }
-
     // Extract format preference from blueprint helper
     const getFormatPreference = (desc) => {
         if (/Format:\s*JSON/i.test(desc)) return 'JSON';
@@ -64,7 +58,6 @@ TONE:
         const response = await fetch(OPENROUTER_API_URL, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
                 'HTTP-Referer': window.location.origin, // Required by OpenRouter
                 'X-Title': 'Prompt Engine', // Optional
                 'Content-Type': 'application/json'
@@ -89,7 +82,7 @@ TONE:
         }
 
         const data = await response.json();
-        return data.choices[0].message.content;
+        return data.choices?.[0]?.message?.content || 'No content returned from AI.';
 
     } catch (error) {
         console.error('AI Service Error:', error);
