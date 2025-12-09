@@ -66,15 +66,15 @@ const Home = () => {
 
             {/* Navigation - Tech Style */}
             <nav className="relative z-50 px-6 py-3 border-b border-white/[0.06] backdrop-blur-sm bg-black/20 sticky top-0">
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                <div className="max-w-7xl mx-auto flex flex-wrap items-center gap-3 md:gap-6 justify-between">
+                    <div className="flex items-center gap-3 min-w-0">
                         <img src={logo} alt="Prompt AI Logo" className="h-16 w-auto" />
                         <span className="text-xl font-bold tracking-tight text-white font-mono">
                             PROMPT_AI<span className="text-violet-500">.SYS</span>
                         </span>
                     </div>
 
-                    <div className="hidden md:flex items-center gap-1">
+                    <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
                         {['FEATURES', 'STATS', 'PRICING', 'DOCS'].map((item) => (
                             <a key={item} href={`#${item.toLowerCase()}`} className="px-4 py-2 text-xs font-mono text-gray-400 hover:text-white hover:bg-white/5 rounded transition-all">
                                 {item}
@@ -82,31 +82,31 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <span className="hidden md:inline-block font-mono text-xs text-emerald-500">
+                    <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
+                        <span className="hidden md:inline-block font-mono text-xs text-emerald-500 whitespace-nowrap">
                             ● SYSTEM_ONLINE
                         </span>
                         {session ? (
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
                                 <UserDropdown session={session} profile={profile} />
                                 <button
                                     onClick={() => navigate('/dashboard')}
-                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded"
+                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto"
                                 >
                                     Launch Console
                                 </button>
                             </div>
                         ) : (
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
                                 <button
                                     onClick={() => setIsAuthModalOpen(true)}
-                                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors w-full sm:w-auto text-left"
                                 >
                                     Login
                                 </button>
                                 <button
                                     onClick={() => setIsAuthModalOpen(true)}
-                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded"
+                                    className="px-5 py-2 text-sm font-medium bg-white text-black hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto"
                                 >
                                     Launch Console
                                 </button>
