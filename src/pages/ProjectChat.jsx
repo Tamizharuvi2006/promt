@@ -240,7 +240,7 @@ const ProjectChat = () => {
                             </div>
 
                             {/* Bubble */}
-                            <div className={`relative min-w-0 max-w-[calc(100%-3rem)] sm:max-w-[80%] rounded-2xl p-3 sm:p-4 shadow-md ${msg.role === 'user'
+                            <div className={`relative min-w-0 max-w-[calc(100%-2.5rem)] sm:max-w-[80%] rounded-2xl p-3 sm:p-4 shadow-md overflow-hidden ${msg.role === 'user'
                                 ? 'bg-violet-600 text-white rounded-tr-sm'
                                 : (msg.role === 'system'
                                     ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200'
@@ -254,7 +254,7 @@ const ProjectChat = () => {
                                     </div>
                                 )}
 
-                                <div className="text-[11px] sm:text-xs leading-relaxed whitespace-pre-wrap break-words overflow-wrap-anywhere">
+                                <div className="text-[11px] sm:text-xs leading-relaxed whitespace-pre-wrap break-all overflow-hidden" style={{wordBreak: 'break-all', overflowWrap: 'anywhere'}}>
                                     {msg.content}
                                 </div>
 
