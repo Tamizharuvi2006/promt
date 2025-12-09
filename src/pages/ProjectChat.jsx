@@ -200,7 +200,7 @@ const ProjectChat = () => {
             <Sidebar activePage="dashboard" projects={sidebarProjects} />
 
             {/* Chat Interface */}
-            <main className="flex-1 flex flex-col h-screen relative bg-[#0f0f0f]">
+            <main className="flex-1 flex flex-col min-h-screen relative bg-[#0f0f0f]">
 
                 {/* Header (Same as before) */}
                 <header className="h-16 border-b border-white/5 bg-[#0a0a0a]/50 backdrop-blur-sm flex items-center justify-between px-6 z-20">
@@ -230,11 +230,11 @@ const ProjectChat = () => {
                 </header>
 
                 {/* Chat Area */}
-                <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-[#0f0f0f]">
+                <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6 scroll-smooth bg-[#0f0f0f]">
                     {messages.map((msg, index) => (
                         <div key={msg.id || index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2 duration-300`}>
 
-                            <div className={`relative w-full max-w-[95%] md:max-w-[85%] rounded-2xl p-4 md:p-5 shadow-lg group overflow-hidden ${msg.role === 'user'
+                            <div className={`relative w-full max-w-full sm:max-w-[92%] md:max-w-[85%] rounded-2xl p-3 sm:p-4 md:p-5 shadow-lg group overflow-hidden ${msg.role === 'user'
                                 ? 'bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-tr-none border border-white/10'
                                 : (msg.role === 'system'
                                     ? 'bg-blue-500/5 border border-blue-500/20 text-blue-200'
@@ -248,7 +248,7 @@ const ProjectChat = () => {
                                     </div>
                                 )}
 
-                                <div className="font-mono text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words overflow-x-auto">
+                                <div className="font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words overflow-x-auto">
                                     {msg.content}
                                 </div>
 
@@ -283,7 +283,7 @@ const ProjectChat = () => {
                 </div>
 
                 {/* Input Area */}
-                <div className="p-4 bg-[#0a0a0a] border-t border-white/5">
+                <div className="p-3 sm:p-4 bg-[#0a0a0a] border-t border-white/5">
                     <form onSubmit={handleSendMessage} className="relative max-w-4xl mx-auto">
                         <input
                             type="text"
@@ -291,7 +291,7 @@ const ProjectChat = () => {
                             onChange={(e) => setInputMessage(e.target.value)}
                             placeholder={sending ? "AI is thinking..." : "Type your instruction..."}
                             disabled={sending}
-                            className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl pl-4 pr-12 py-3.5 text-sm text-white focus:border-violet-500/50 focus:outline-none placeholder-gray-600 transition-all shadow-lg font-mono disabled:opacity-50"
+                            className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl pl-4 pr-12 py-3 sm:py-3.5 text-sm text-white focus:border-violet-500/50 focus:outline-none placeholder-gray-600 transition-all shadow-lg font-mono disabled:opacity-50"
                         />
                         <button
                             type="submit"
