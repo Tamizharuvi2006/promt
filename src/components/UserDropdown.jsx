@@ -47,13 +47,13 @@ const UserDropdown = ({ session, profile }) => {
                 </div>
 
                 {/* Name */}
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors max-w-[100px] truncate">
+                <span className="hidden md:inline text-sm font-medium text-gray-300 group-hover:text-white transition-colors max-w-[100px] truncate">
                     {displayName}
                 </span>
 
                 {/* Arrow Icon */}
                 <svg
-                    className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    className={`hidden md:block w-4 h-4 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

@@ -82,7 +82,7 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
+                    <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto ml-auto">
                         <span className="hidden md:inline-block font-mono text-xs text-emerald-500 whitespace-nowrap">
                             ● SYSTEM_ONLINE
                         </span>
@@ -100,7 +100,7 @@ const Home = () => {
                             <div className="flex items-center gap-3 flex-wrap justify-end w-full md:w-auto">
                                 <button
                                     onClick={() => setIsAuthModalOpen(true)}
-                                    className="px-5 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-violet-50 transition-colors border border-transparent rounded w-full sm:w-auto text-center"
+                                    className="px-4 py-2 text-sm font-medium text-gray-900 bg-white hover:bg-violet-50 transition-colors border border-transparent rounded w-auto"
                                 >
                                     Login
                                 </button>
