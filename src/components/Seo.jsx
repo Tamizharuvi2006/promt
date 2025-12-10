@@ -14,8 +14,8 @@ const Seo = ({ title, description, keywords, canonical, image }) => {
         ? description
         : `${ALT_BRAND} (aka ${PRIMARY_BRAND}) is the prompt web app to plan, build, and ship AI prompts for ChatGPT, Claude, and Gemini.`;
     const pageKeywords = keywords
-        ? `${keywords}, ${ALT_BRAND.toLowerCase()}, webprompt, prompt web app, ai prompt builder, prompt engineering`
-        : `${ALT_BRAND.toLowerCase()}, webprompt, prompt web app, prompt builder, ai prompt generator, prompt engineering, prompt ops, prompt automation`;
+        ? `${keywords}, ${ALT_BRAND.toLowerCase()}, webprompt, prompt web app, ai prompt builder, prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter`
+        : `${ALT_BRAND.toLowerCase()}, webprompt, prompt web app, prompt builder, ai prompt generator, prompt engineering, prompt engineering tool, prompt upgrader, json prompt builder, ai prompt formatter, prompt ops, prompt automation`;
     const pageUrl = canonical || DEFAULT_SITE_URL;
     const imageUrl = image || DEFAULT_IMAGE;
 
