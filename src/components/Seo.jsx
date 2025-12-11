@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const DEFAULT_SITE_URL = 'https://webprompt.app/';
+const DEFAULT_SITE_URL = 'https://promptweb.app/';
 const DEFAULT_IMAGE = `${DEFAULT_SITE_URL}logo.webp`;
 const PRIMARY_BRAND = 'PromptWeb';
 const LEGACY_BRAND = 'PromptVibely';

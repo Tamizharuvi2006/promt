@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="space-y-4">
                         <h4 className="text-sm font-bold text-gray-200 uppercase tracking-wider">Domains</h4>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li><a href="https://webprompt.app" className="hover:text-violet-400 transition-colors">webprompt.app</a></li>
+                            <li><a href="https://promptweb.app" className="hover:text-violet-400 transition-colors">promptweb.app</a></li>
                             <li><a href="https://promptweb.app" className="hover:text-violet-400 transition-colors">promptweb.app</a></li>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@ const Footer = () => {
 
                 <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-600">
                     <div className="flex items-center gap-2">
-                        <RiCopyrightLine /> 2025 WEBPROMPT.APP // ALL SYSTEMS OPERATIONAL
+                        <RiCopyrightLine /> 2025 PROMPTWEB.APP // ALL SYSTEMS OPERATIONAL
                     </div>
                 </div>
             </div>

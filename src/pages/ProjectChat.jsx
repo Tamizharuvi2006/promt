@@ -198,7 +198,7 @@ const ProjectChat = () => {
                 title={project?.name ? `${project.name} | PromptWeb Prompt Chat` : 'PromptWeb Prompt Chat'}
                 description={project?.name ? `Chat, iterate, and ship prompts for ${project.name} in PromptWeb.` : 'Chat, iterate, and ship prompts in PromptWeb.'}
                 keywords="promptweb prompt chat, prompt builder, project chat, ai prompt iteration"
-                canonical={project?.id ? `https://webprompt.app/project/${project.id}` : 'https://webprompt.app/project'}
+                canonical={project?.id ? `https://promptweb.app/project/${project.id}` : 'https://promptweb.app/project'}
             />
 
             {/* Sidebar */}

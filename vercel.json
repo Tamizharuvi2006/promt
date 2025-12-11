@@ -2,9 +2,9 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://webprompt.app/$1",
+      "destination": "https://promptweb.app/$1",
       "permanent": true,
-      "has": [{ "type": "host", "value": "www.webprompt.app" }]
+      "has": [{ "type": "host", "value": "www.promptweb.app" }]
     }
   ],
   "rewrites": [

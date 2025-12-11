@@ -66,7 +66,7 @@ const Home = () => {
                 title="PromptWeb Prompt Engineering Tool"
                 description="PromptWeb is the prompt engineering tool and JSON prompt builder that upgrades, formats, and ships production AI prompts."
                 keywords="promptweb, prompt web app, ai prompt builder, prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter"
-                canonical="https://webprompt.app/"
+                canonical="https://promptweb.app/"
             />
 
             {/* Navigation - Tech Style */}
@@ -154,11 +154,11 @@ const Home = () => {
                             <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                                 <h3 className="text-lg font-semibold text-white mb-2">Quick links</h3>
                                 <ul className="space-y-2 list-disc list-inside">
-                                    <li><a href="#features" className="text-violet-300 hover:text-violet-200">Explore features</a></li>
-                                    <li><a href="#stats" className="text-violet-300 hover:text-violet-200">View platform stats</a></li>
-                                    <li><a href="#pricing" className="text-violet-300 hover:text-violet-200">Check pricing</a></li>
-                                    <li><a href="#about" className="text-violet-300 hover:text-violet-200">Why PromptWeb</a></li>
-                                    <li><a href="/dashboard" className="text-violet-300 hover:text-violet-200">Open dashboard</a></li>
+                                    <li><a href="#about" className="text-violet-300 hover:text-violet-200">Learn more</a></li>
+                                    <li><a href="/dashboard" className="text-violet-300 hover:text-violet-200">Sign up / Login</a></li>
+                                    <li><a href="#pricing" className="text-violet-300 hover:text-violet-200">Pricing</a></li>
+                                    <li><a href="#features" className="text-violet-300 hover:text-violet-200">Features</a></li>
+                                    <li><a href="#stats" className="text-violet-300 hover:text-violet-200">Platform stats</a></li>
                                 </ul>
                             </div>
                             <div className="bg-white/5 border border-white/10 rounded-xl p-4">

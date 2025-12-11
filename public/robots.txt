@@ -5,4 +5,4 @@ Allow: /
 # Targeted SEO keywords we support (informational only; crawlers ignore comments)
 # prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter
 
-Sitemap: https://webprompt.app/sitemap.xml
+Sitemap: https://promptweb.app/sitemap.xml

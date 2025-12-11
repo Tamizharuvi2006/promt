@@ -54,7 +54,7 @@ const Profile = () => {
                 title="PromptWeb Profile"
                 description="View and manage your PromptWeb profile, credits, and subscription."
                 keywords="promptweb profile, prompt account, prompt builder profile"
-                canonical="https://webprompt.app/profile"
+                canonical="https://promptweb.app/profile"
             />
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 pointer-events-none">

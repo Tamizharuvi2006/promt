@@ -140,7 +140,7 @@ const Dashboard = () => {
                 title="PromptWeb Dashboard"
                 description="Manage prompt projects, credits, and AI prompt engineering in the PromptWeb dashboard."
                 keywords="promptweb dashboard, prompt builder console, prompt projects"
-                canonical="https://webprompt.app/dashboard"
+                canonical="https://promptweb.app/dashboard"
             />
             <Sidebar activePage="dashboard" projects={projects} />
 
