@@ -63,9 +63,9 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0a] relative flex flex-col font-sans selection:bg-violet-500/30">
             <Seo
-                title="PromptVibely Prompt Web App"
-                description="PromptVibely is the prompt engineering tool and JSON prompt builder that upgrades, formats, and ships production AI prompts."
-                keywords="promptvibely, prompt web app, ai prompt builder, prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter"
+                title="PromptWeb Prompt Engineering Tool"
+                description="PromptWeb is the prompt engineering tool and JSON prompt builder that upgrades, formats, and ships production AI prompts."
+                keywords="promptweb, prompt web app, ai prompt builder, prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter"
                 canonical="https://webprompt.app/"
             />
 
@@ -137,15 +137,15 @@ const Home = () => {
                 {/* SEO Content Block */}
                 <section id="about" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-gray-200">
                     <div className="max-w-5xl mx-auto space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">About PromptVibely</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">About PromptWeb</h2>
                         <p className="text-base leading-relaxed text-gray-300">
-                            PromptVibely is the platform for building apps easier by prompt. We combine a prompt web app, prompt chat, and dashboard workflows so you can design, test, and ship production-grade prompts without wrestling with scattered tools. Every flow in the product is built to keep your prompt engineering loop tight: describe what you want, see a blueprint, iterate with AI, and deploy to your stack.
+                            PromptWeb is the platform for building apps easier by prompt. We combine a prompt web app, prompt chat, and dashboard workflows so you can design, test, and ship production-grade prompts without wrestling with scattered tools. Every flow in the product is built to keep your prompt engineering loop tight: describe what you want, see a blueprint, iterate with AI, and deploy to your stack.
                         </p>
                         <p className="text-base leading-relaxed text-gray-300">
                             Our dashboard gives you organized projects, credit tracking, and a prompt library. The prompt chat keeps conversation and context together so you can refine instructions before they hit production. We focus on clarity in the prompt itself—role, context, constraints, and evaluation—so your apps stay deterministic across GPT-4, Claude, and any model you run.
                         </p>
                         <p className="text-base leading-relaxed text-gray-300">
-                            PromptVibely doubles as your prompt engineering tool, prompt generator, and prompt upgrader. Need a JSON prompt builder for structured outputs? Want an AI prompt formatter that enforces sections and style? It is all in one place so teams can move from draft to deterministic prompt quickly.
+                            PromptWeb doubles as your prompt engineering tool, prompt generator, and prompt upgrader. Need a JSON prompt builder for structured outputs? Want an AI prompt formatter that enforces sections and style? It is all in one place so teams can move from draft to deterministic prompt quickly.
                         </p>
                         <p className="text-base leading-relaxed text-gray-300">
                             If you are evaluating prompt builders, compare us against generic editors: PromptVibely bakes in guardrails like token efficiency, response formatting, and reusable blueprints. That means fewer regressions, faster onboarding for teammates, and cleaner handoffs to engineering. The goal is simple: make prompt ops boring, predictable, and fast so your team ships features—not just drafts.
@@ -157,7 +157,7 @@ const Home = () => {
                                     <li><a href="#features" className="text-violet-300 hover:text-violet-200">Explore features</a></li>
                                     <li><a href="#stats" className="text-violet-300 hover:text-violet-200">View platform stats</a></li>
                                     <li><a href="#pricing" className="text-violet-300 hover:text-violet-200">Check pricing</a></li>
-                                    <li><a href="#about" className="text-violet-300 hover:text-violet-200">Why PromptVibely</a></li>
+                                    <li><a href="#about" className="text-violet-300 hover:text-violet-200">Why PromptWeb</a></li>
                                     <li><a href="/dashboard" className="text-violet-300 hover:text-violet-200">Open dashboard</a></li>
                                 </ul>
                             </div>
@@ -174,7 +174,7 @@ const Home = () => {
                             </div>
                         </div>
                         <p className="text-base leading-relaxed text-gray-300">
-                            Looking for a prompt web app that stays aligned with your roadmap? PromptVibely centers the words in your H1—building apps easier by prompt—inside every feature. Bring your own stack, connect to your preferred LLM, and keep iterating with a workflow that is designed for real shipping teams. Use it as a prompt generator to draft, a prompt upgrader to tighten, and an AI prompt formatter to ship structured outputs reliably.
+                            Looking for a prompt web app that stays aligned with your roadmap? PromptWeb centers the words in your H1—building apps easier by prompt—inside every feature. Bring your own stack, connect to your preferred LLM, and keep iterating with a workflow that is designed for real shipping teams. Use it as a prompt generator to draft, a prompt upgrader to tighten, and an AI prompt formatter to ship structured outputs reliably.
                         </p>
                     </div>
                 </section>

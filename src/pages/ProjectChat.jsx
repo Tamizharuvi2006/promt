@@ -195,9 +195,9 @@ const ProjectChat = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0a] font-sans selection:bg-violet-500/30 flex overflow-hidden">
             <Seo
-                title={project?.name ? `${project.name} | PromptVibely Prompt Chat` : 'PromptVibely Prompt Chat'}
-                description={project?.name ? `Chat, iterate, and ship prompts for ${project.name} in PromptVibely.` : 'Chat, iterate, and ship prompts in PromptVibely.'}
-                keywords="promptvibely prompt chat, prompt builder, project chat, ai prompt iteration"
+                title={project?.name ? `${project.name} | PromptWeb Prompt Chat` : 'PromptWeb Prompt Chat'}
+                description={project?.name ? `Chat, iterate, and ship prompts for ${project.name} in PromptWeb.` : 'Chat, iterate, and ship prompts in PromptWeb.'}
+                keywords="promptweb prompt chat, prompt builder, project chat, ai prompt iteration"
                 canonical={project?.id ? `https://webprompt.app/project/${project.id}` : 'https://webprompt.app/project'}
             />
 

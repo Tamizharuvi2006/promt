@@ -51,9 +51,9 @@ const Profile = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white p-6 relative overflow-hidden font-sans selection:bg-violet-500/30">
             <Seo
-                title="PromptVibely Profile"
-                description="View and manage your PromptVibely profile, credits, and subscription."
-                keywords="promptvibely profile, prompt account, prompt builder profile"
+                title="PromptWeb Profile"
+                description="View and manage your PromptWeb profile, credits, and subscription."
+                keywords="promptweb profile, prompt account, prompt builder profile"
                 canonical="https://webprompt.app/profile"
             />
             {/* Background Effects */}

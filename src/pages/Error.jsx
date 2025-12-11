@@ -36,9 +36,9 @@ const ErrorPage = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center px-4">
       <Seo
-        title="PromptVibely | Page Not Found"
-        description="PromptVibely prompt web app page not found. Return to dashboard or home."
-        keywords="promptvibely 404, prompt web app not found"
+        title="PromptWeb | Page Not Found"
+        description="PromptWeb prompt web app page not found. Return to dashboard or home."
+        keywords="promptweb 404, prompt web app not found"
         canonical="https://webprompt.app/404"
       />
       <div className="max-w-lg w-full bg-[#0f0f0f] border border-white/10 rounded-2xl p-8 shadow-2xl text-center space-y-4">
