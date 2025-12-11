@@ -39,12 +39,12 @@ const HeroContent = () => {
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                         </button>
 
-                        <button
-                            onClick={() => navigate('/dashboard')}
+                        <a
+                            href="#about"
                             className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-gray-300 transition-all duration-200 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white rounded-lg font-mono"
                         >
-                            New Project
-                        </button>
+                            Learn more
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-6 pt-8 text-sm text-gray-500 font-mono">

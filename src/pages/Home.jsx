@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { supabase } from '../supabaseClient';
 import HeroContent from '../components/HeroContent';
 import Pricing from '../components/Pricing';
@@ -60,6 +61,25 @@ const Home = () => {
         }
     }, [session]);
 
+    const faqItems = [
+        {
+            q: 'What is PromptWeb?',
+            a: 'PromptWeb is a prompt engineering tool and JSON prompt builder to design, upgrade, and format production-ready prompts.',
+        },
+        {
+            q: 'Can I generate and upgrade prompts?',
+            a: 'Yes. Use PromptWeb as a prompt generator and prompt upgrader to tighten instructions, add structure, and reduce regressions.',
+        },
+        {
+            q: 'Do you support JSON-formatted prompts?',
+            a: 'PromptWeb includes an AI prompt formatter and JSON prompt builder so you can enforce sections, keys, and response contracts.',
+        },
+        {
+            q: 'How do I start?',
+            a: 'Sign up or log in from the dashboard, create a project, then iterate in prompt chat with saved history and credits tracking.',
+        },
+    ];
+
     return (
         <div className="min-h-screen bg-[#0a0a0a] relative flex flex-col font-sans selection:bg-violet-500/30">
             <Seo
@@ -68,6 +88,22 @@ const Home = () => {
                 keywords="promptweb, prompt web app, ai prompt builder, prompt engineering tool, prompt generator, prompt upgrader, json prompt builder, ai prompt formatter"
                 canonical="https://promptweb.app/"
             />
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'FAQPage',
+                        mainEntity: faqItems.map((item) => ({
+                            '@type': 'Question',
+                            name: item.q,
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: item.a,
+                            },
+                        })),
+                    })}
+                </script>
+            </Helmet>
 
             {/* Navigation - Tech Style */}
             <nav className="relative z-50 px-4 sm:px-6 py-3 border-b border-white/[0.06] backdrop-blur-sm bg-black/20 sticky top-0">
@@ -159,6 +195,7 @@ const Home = () => {
                                     <li><a href="#pricing" className="text-violet-300 hover:text-violet-200">Pricing</a></li>
                                     <li><a href="#features" className="text-violet-300 hover:text-violet-200">Features</a></li>
                                     <li><a href="#stats" className="text-violet-300 hover:text-violet-200">Platform stats</a></li>
+                                    <li><a href="#faq" className="text-violet-300 hover:text-violet-200">FAQ</a></li>
                                 </ul>
                             </div>
                             <div className="bg-white/5 border border-white/10 rounded-xl p-4">
@@ -176,6 +213,21 @@ const Home = () => {
                         <p className="text-base leading-relaxed text-gray-300">
                             Looking for a prompt web app that stays aligned with your roadmap? PromptWeb centers the words in your H1—building apps easier by prompt—inside every feature. Bring your own stack, connect to your preferred LLM, and keep iterating with a workflow that is designed for real shipping teams. Use it as a prompt generator to draft, a prompt upgrader to tighten, and an AI prompt formatter to ship structured outputs reliably.
                         </p>
+                    </div>
+                </section>
+
+                {/* FAQ */}
+                <section id="faq" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] text-gray-200">
+                    <div className="max-w-5xl mx-auto space-y-8">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">FAQs</h2>
+                        <div className="space-y-4">
+                            {faqItems.map((item, idx) => (
+                                <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                                    <h3 className="text-lg font-semibold text-white mb-2">{item.q}</h3>
+                                    <p className="text-sm text-gray-300 leading-relaxed">{item.a}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
             </main>
